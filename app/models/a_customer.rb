@@ -1,2 +1,0 @@
-class ACustomer < ApplicationRecord
-end

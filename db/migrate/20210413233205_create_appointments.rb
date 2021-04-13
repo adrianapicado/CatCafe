@@ -4,6 +4,8 @@ class CreateAppointments < ActiveRecord::Migration[6.1]
       t.datetime :date
       t.string :name
       t.string :coffee
+      t.belongs_to :cat, foreign_key: true
+      t.belongs_to :customer, foreign_key: true
 
       t.timestamps
     end
