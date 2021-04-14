@@ -10,6 +10,25 @@
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
+  <div>
+  <br>
+
+    <% if session[:user_id] %>
+    
+      <%=  link_to "Log Out", logout_path, method: :delete %> 
+      
+      <%= link_to "Your Account", customer_path(session[:user_id]) %>
+       
+      <%= link_to "Make appointment", new_customer_appointment_path(session[:user_id]) %>
+
+    <% else %>
+
+    <%= link_to "Home Page", '/' %>
+    
+      <% end %>
+  </div>
+
+
   <body>
     <%= yield %>
   </body>
