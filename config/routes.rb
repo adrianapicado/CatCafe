@@ -7,7 +7,7 @@ Rails.application.routes.draw do
   end
   
 
-  get '/' => 'sessions#welcome'
+  get '/' => 'sessions#home'
 
   get '/login' => 'sessions#new'
 
