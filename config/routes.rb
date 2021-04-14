@@ -2,6 +2,10 @@ Rails.application.routes.draw do
 
   resources :appointments
   resources :cats 
+  resources :customers do 
+    resources :appointments, only: [:new, :index]
+  end
+  
 
   get '/' => 'sessions#welcome'
 

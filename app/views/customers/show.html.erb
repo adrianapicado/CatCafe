@@ -1,18 +1,8 @@
-<h1> edit <%= @customer.username %>
-<%= form_for @customer do |f|%>
-    <% if @customer.errors.any? %>
-    <div id="error_explanation">
-        <h2>Please try again:</h2>
-        <ul>
-        <% @customer.errors.full_messages.each do |message| %>
-            <li><%= message %></li>
-        <% end %>
-        </ul>
-    </div>
-    <% end %>
-    <%= f.label "Username:" %>
-    <%= f.text_field :username %>
-    <%= f.label "Password:" %>
-    <%= f.password_field :password %>
+<p><h1> Your home page! </h1></p>
 
-    
+<p><h1> <%= @customer.username %></h1> </p>
+
+
+<p><h3> <%= @customer.username%>'s <%= link_to "Appointments", customer_appointments_path(@customer.id) %>: <%= @customer_appointments.count %></h3></p>
+
+
