@@ -1,6 +1,17 @@
 Rails.application.routes.draw do
-  resources :a_customers
-  resources :cats
+
   resources :appointments
-  # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
+  resources :cats 
+
+  get '/' => 'sessions#welcome'
+
+  get '/login' => 'sessions#new'
+
+  post '/login' => 'sessions#create'
+
+  get '/signup' =>  'customers#new'
+
+  delete '/logout' => 'sessions#destroy'
+
+
 end
