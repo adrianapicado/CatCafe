@@ -21,7 +21,7 @@ class AppointmentsController < ApplicationController
     end
 
     def create
-      if current_customer && current_customer == session[:user_id]
+      if @current_customer && @current_customer == session[:user_id]
          @appointment = current_customer.appointments.build(appointment_params)
          @appointment.customer_id = session[:user_id]          
          if @appointment.save
@@ -55,7 +55,7 @@ class AppointmentsController < ApplicationController
         params.require(:appointment).permit(:date, :name, :coffee, :cat_id, :customer_id, cat_attributes[:name, :mittens])
       end
     end
-    
+
 
 
 end

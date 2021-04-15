@@ -1,6 +1,6 @@
 class Cat < ApplicationRecord
     has_many :appointments
-    has_many :customers, through :appointments
+    has_many :customers, through: :appointments
 
     validates :name, uniqueness: true, presence: true 
     
