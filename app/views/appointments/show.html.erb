@@ -1,0 +1,10 @@
+<h1> <%=@appointment.customer.username%>'s Your Appointment:</h1>
+
+<h1> Date of appointment <%= @appointment.date.strftime("%B %e, %Y at %l:%M %p")%></h1>
+<h3> Coffee:
+<%= @appointment.coffee %>
+<h3> Furry friend: <%= link_to @appointment.cat.name, cat_path(@cat.cat_id) %></h3>
+<div> For you: 
+<%= link_to @appointment.customer.username, customer_path(@appointment.customer_id) %>
+</div>
+<br>
