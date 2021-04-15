@@ -49,8 +49,13 @@ class AppointmentsController < ApplicationController
     private 
 
     def appointment_params
-     params.require(:appointment).permit(:date, :name, :coffee, :cat_id, :customer_id, cat_attributes[:name, :mittens])
+      if params[:appointment][:cat_attributes][:name] == ""
+         params.require(:appointment).permit(:date, :name, :coffee, :cat_id, :customer_id)
+      else
+        params.require(:appointment).permit(:date, :name, :coffee, :cat_id, :customer_id, cat_attributes[:name, :mittens])
+      end
     end
+    
 
 
 end
