@@ -21,6 +21,17 @@ class AppointmentsController < ApplicationController
     end
 
     def create
+      if current_customer && current_customer == session[:user_id]
+         @appointment = current_customer.appointments.build(appointment_params)
+         @appointment.customer_id = session[:user_id]          
+         if @appointment.save
+            redirect_to appointment_path(@appointment)
+        else
+            render :new
+        end
+      else
+           redirect_to '/'
+        end
     end
 
     def edit 
@@ -33,5 +44,10 @@ class AppointmentsController < ApplicationController
     end
 
     private 
+
+    def appointment_params
+     params.require(:appointment).permit(:date, :name, :coffee, :cat_id, :customer_id, cat_attributes[:name, :mittens])
+    end
+
 
 end
