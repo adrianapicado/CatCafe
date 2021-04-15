@@ -14,7 +14,10 @@ class AppointmentsController < ApplicationController
       end
     end
 
-    def new
+    def new 
+      @customer = Appointment.find_by_id(params[:customer_id])
+      @appointment = Appointment.new
+      @appointment.build_cat
     end
 
     def create
