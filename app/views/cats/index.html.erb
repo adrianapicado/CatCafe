@@ -1,0 +1,8 @@
+
+<h1> Cats & Kittens </h1>
+<ul>
+<% @cats.each do |cat| %>
+  <li>Name: <%= link_to cat.name, cat_path(cat) %> Total Coffee Dates: <%= cat.appointments.count %></li>
+<br>
+<% end %>
+</ul>
