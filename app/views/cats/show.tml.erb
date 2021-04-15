@@ -1,0 +1,10 @@
+<h1> Cats & Kittens </h1>
+<h1> <%= @cat.name %></h1>
+
+<h3> Coffee Dates:</h3>
+<br>
+<ul>
+<% @cat.appointments.each do |appointment| %>
+  <li><%= appointment.coffee %> to enjoy with <%= link_to appointment.customer.username, customer_path(appointment.customer_id) %> at <%= appointment.date %></li>
+<% end %>
+</ul>
