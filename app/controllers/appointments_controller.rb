@@ -36,13 +36,14 @@ class AppointmentsController < ApplicationController
 
     def edit 
       @appointment = Appointment.find_by_id(params[:id])
-      redirect_to '/' if !@appointment
     end
 
     def update 
     end
 
     def show 
+      @appointment = Appointment.find_by_id(params[:id])
+      redirect_to '/' if !@appointment
     end
 
     private 
