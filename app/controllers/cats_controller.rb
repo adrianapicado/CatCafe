@@ -5,5 +5,8 @@ class CatsController < ApplicationController
    redirect_to '/' if !@cat
   end
 
+  def index 
+    @cats = Cat.all
+  end
 
 end
