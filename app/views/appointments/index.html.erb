@@ -1,0 +1,9 @@
+<h1> Hey you! </h1>
+
+<h1> <%=@customer.username%>'s appointments! </h1>
+
+
+<% @appointments.each do |appointment| %>
+    <li><%= appointment.coffee %> enjoyed with <%= link_to appointment.cat.name, cat_path(appointment.cat_id) %> @ <%= app.appointment_datetime %></li>
+  <% end %>
+  
