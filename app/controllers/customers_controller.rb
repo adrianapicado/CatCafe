@@ -18,8 +18,8 @@ class CustomersController < ApplicationController
       if params[:id].to_i == session[:user_id]    
         @customer = Customer.find_by_id(params[:id])
         @customer_appointments = @customer.appointments
-       elsif current_customer
-             redirect_to customer_path(current_customer)
+       elsif current_user
+             redirect_to customer_path(current_user)
        else
             redirect_to '/' 
         end

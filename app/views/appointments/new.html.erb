@@ -1,5 +1,6 @@
 
 <h1> Appointment Maker </h1>
+
 <%= form_for @appointment do |f|%>
 <% if @appointment.errors.any? %>
   <div id="error_explanation">
@@ -34,4 +35,4 @@
     </div>
 <br>
     <%= f.submit "create appointment" %>
-<% end %>
+<%end%>

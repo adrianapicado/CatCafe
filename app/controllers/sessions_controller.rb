@@ -8,7 +8,7 @@ class SessionsController < ApplicationController
 
     def create 
      @customer = Customer.find_by(username: params[:customer][:username])
-       if @customer.try(:authenticate, params[:customer][:password])
+       if @customer && @customer.authenticate(password: params[:customer][:password])
           session[:user_id] = @customer.id
           redirect_to customer_path(@customer)
         else

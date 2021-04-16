@@ -1,17 +1,13 @@
 class ApplicationController < ActionController::Base
 
-    # def current_customer
-    #     @current_customer ||= Customer.find_by_id(session[:user_id])
-    # end
+    helper_method :current_user
 
-    # def correct_customer
-    #     @customer = Customer.find_by_id(session[:user_id]) if params[:id].to_i == session[:user_id]
+private 
 
-    # end
+def current_user
+    @current_user ||= Customer.find_by_id(session[:user_id]) if session[:user_id]
+end
 
-    helper_method :current_customer
-
-    helper_method :correct_customer
 
 
 end
