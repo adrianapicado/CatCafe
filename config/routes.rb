@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   resources :cats 
   resources :customers do 
     resources :appointments, only: [:new, :index]
+
   end
   
 

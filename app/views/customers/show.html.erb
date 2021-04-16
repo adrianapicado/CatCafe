@@ -1,10 +1,13 @@
-<p><h1> Your home page! </h1></p>
+<p><h1> Hey, <%= @customer.username %></h1> </p>
+<br>
 
-<p><h1> <%= @customer.username %></h1> </p>
+<p>This is your spot, here you'll find you're schduled appointments</p>
+<br>
 
-
-<p><h3> <%= @customer.username%>'s <%= link_to "Appointments", customer_appointments_path(@customer.id) %>: <%= @customer_appointments.count %></h3></p>
-
+<p><h3> <%= link_to "Appointments", customer_appointments_path(@customer.id) %>: <%= @customer_appointments.count %></h3></p>
+<br>
+<br>
+<p>Check out the rest of our furry friends here --> <%= link_to "Furries", cats_path %> </p>
 
 
 
