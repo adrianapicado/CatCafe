@@ -1,8 +1,0 @@
-<hr/>
-Session:<br/>
-<% session.keys.each do |key| %>
-  <%= "#{key}: #{session[key]}" %><br/>
-<% end %>
-<br/>
-User:<br/>
-<%= @current_customer&.username || '[None]' %>
