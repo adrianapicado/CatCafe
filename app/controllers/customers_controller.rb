@@ -25,10 +25,6 @@ class CustomersController < ApplicationController
         end
     end
     
-    def edit
-      @customer = correct_customer if correct_customer
-    end
-    
     
    def update
      @customer = Customer.find(params[:id])
