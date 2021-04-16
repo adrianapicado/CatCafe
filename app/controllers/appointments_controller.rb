@@ -14,8 +14,6 @@ class AppointmentsController < ApplicationController
         else
             render :new
         end
-    
-        
     end
 
     def show 
@@ -38,7 +36,6 @@ class AppointmentsController < ApplicationController
         end
       end
   
-
     
     private 
 
@@ -48,7 +45,7 @@ class AppointmentsController < ApplicationController
      else
         params.require(:appointment).permit(:date, :name, :coffee, :cat_id, :customer_id, cat_attributes:[:name, :mittens])
     end
- end
+    end
 
 end
 
