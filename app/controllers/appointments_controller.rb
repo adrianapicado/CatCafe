@@ -19,7 +19,7 @@ class AppointmentsController < ApplicationController
     def show 
       @appointment = Appointment.find_by_id(params[:id])
       redirect_to '/' if !@appointment
-    end
+    end 
 
 
     def index
