@@ -2,17 +2,7 @@
 <h1> Appointment Maker </h1>
 
 <%= form_for @appointment do |f|%>
-<% if @appointment.errors.any? %>
-  <div id="error_explanation">
-     <h2>Please review & try again:</h2>
-     <ul>
-   <% @appointment.errors.full_messages.each do |message| %>
-      <li><%= message %></li>
-   <% end %>
-    </ul>
-    </div>
-<% end %>
-
+<%= render "appointments/form" %>
     <div>
     <%= f.label "Date" %>
     <%= f.datetime_local_field :date %>
