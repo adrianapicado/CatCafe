@@ -1,13 +1,16 @@
 <p><h1> Hey, <%= @customer.username %></h1> </p>
 <br>
 
-<p>This is your spot, here you'll find you're schduled appointments</p>
+<p>This is your spot! Here you can schedule an appointment, find schduleded appointments & our cafe cats</p>
 <br>
-
+<%= link_to "Make an appointment", new_customer_appointment_path(session[:user_id]) %>
+<br>
+<br>
 <p><h3> <%= link_to "Appointments", customer_appointments_path(@customer.id) %>: <%= @customer_appointments.count %></h3></p>
 <br>
 <br>
-<p>Check out the rest of our furry friends here --> <%= link_to "Furries", cats_path %> </p>
+<br>
+<p>Check out our furry friends here --> <%= link_to "Furries", cats_path %> </p>
 
 
 
