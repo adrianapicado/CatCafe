@@ -1,4 +1,4 @@
-<h1> <%=@appointment.customer.username%>'s Your Appointment:</h1>
+<h1> <%=@appointment.customer.username%>'s appointment:</h1>
 
 <h1> Date of appointment <%= @appointment.date.strftime("%B %e, %Y at %l:%M %p")%></h1>
 <h3> Your Coffee:
@@ -6,5 +6,6 @@
 <h3> Furry friend: <%= link_to @appointment.cat.name, cat_path(@appointment.cat_id) %></h3>
 <div> Your account: 
 <%= link_to @appointment.customer.username, customer_path(@appointment.customer_id) %>
+<br>
 </div>
 <br>
