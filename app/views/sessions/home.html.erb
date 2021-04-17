@@ -1,3 +1,18 @@
+<html>
+<head>
+<style>
+h1 {text-align: center;}
+h3 {text-align: center;}
+p {text-align: center;}
+.alignleft {
+	float: left;
+}
+.alignright {
+	float: right;
+}
+</style>
+</head>
+<body>
 <img src="https://image.freepik.com/free-vector/cute-cats-funny-cat-box-adorable-sleeping-kitty-fat-cat-sweater-illustration-set-domestic-animal-lifestyle-comic-pet-working-laptop-doing-yoga-listening-music-stickers_229548-5.jpg" class="rounded float-start" alt="...">
 <img src="https://image.freepik.com/free-vector/cute-cats-cat-box-adorable-red-kitty-sleeping-fat-cat-fur-sweater-illustration-set-domestic-animal-lifestyle-comic-pet-glasses-working-laptop-drinking-cocktail-stickers_229548-44.jpg" class="rounded float-end" alt="...">
 <br>
@@ -5,7 +20,7 @@
 <br>
 <br>
 <br>
-<h1> <i>Cat Cafe Welcome!<i></h1>
+<h1>Cat Cafe Welcome!</h1>
 <br>
 <br>
 <br>
@@ -15,10 +30,15 @@
 <br>
 <br>
 <p> <h3> Make an appointment & join us!<b></h3> 
-<p> <h3> Enjoy your favorite coffee in company of our rescue cats<b></h3>
+<p> <h3> <i>Enjoy your favorite coffee in company of our rescue cats<i></h3>
 <br>
 <br>
- <%= link_to "Login", login_path %>
+ <p> <%= link_to "Login", login_path %></p>
 <br>
 <br>
- <%= link_to "Signup", signup_path %>
+<p> <%= link_to "Signup", signup_path %><p>
+<br>
+<div id="textbox">
+  <p class="alignleft">Our Address: 908 Silverspring Blvd, Summit, NJ</p>
+  <p class="alignright">Phone Us: 222-000-1177 Our e-mail: cats@cafe.comm</p>
+</div>
