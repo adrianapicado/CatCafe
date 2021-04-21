@@ -9,11 +9,22 @@ Welcome to Cat Cafe! Here you, as a customer, can create & schedule appointments
 As a user you have the option to create an account with us, or signing up with Google!
 
 # Installation
-First clone the repo and then install the gems required 
+
+* First clone the repo and then install the gems required 
 
 ```
 bundle install 
+```
 
+* Run migrations 
+
+```
+rails db:migrate 
+```
+* Run application on your local server
+
+```
+rails s
 ```
 
 
