@@ -7,7 +7,6 @@ Rails.application.routes.draw do
 
   end
   
-
   get '/' => 'sessions#home'
 
   get '/login' => 'sessions#new'
@@ -16,7 +15,7 @@ Rails.application.routes.draw do
 
   get '/signup' =>  'customers#new'
 
-  delete '/logout' => 'sessions#destroy'
+  post '/logout' => 'sessions#destroy'
 
 
 end

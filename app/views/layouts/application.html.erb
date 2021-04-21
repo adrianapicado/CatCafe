@@ -18,12 +18,14 @@
   <br>
 
     <% if session[:user_id] %>
-
-      <%=  link_to "Log Out", logout_path, method: :delete %> 
       
       <%= link_to "Your Account", customer_path(session[:user_id]) %>
 
       <%= link_to "Home Page", '/' %>
+      
+      <br>
+
+      <%=  button_to "Logout", logout_path %>
 
     
       <% end %>
