@@ -10,7 +10,7 @@ As a user you have the option to create an account with us, or signing up with G
 
 # Installation
 
-* First clone the repo and then install the gems required 
+* First clone the repo & then install the gems required 
 
 ```
 bundle install 
@@ -26,6 +26,10 @@ rails db:migrate
 ```
 rails s
 ```
+
+# Contributing 
+
+Bug reports and pull requests are welcome on GitHub at https://github.com/adrianapicado/CatCafe
 
 
 
