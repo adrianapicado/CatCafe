@@ -1,11 +1,8 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+CAT CAFE
 
-Things you may want to cover:
-
-* Ruby version
+<img width="1440" alt="Screen Shot 2021-04-21 at 7 39 23 PM" src="https://user-images.githubusercontent.com/72949156/115635293-63bf0c80-a2d9-11eb-8161-25119a0abd59.png">
 
 * System dependencies
 
