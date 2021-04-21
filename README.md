@@ -11,7 +11,10 @@ As a user you have the option to create an account with us, or signing up with G
 # Installation
 First clone the repo and then install the gems required 
 
-''' bundle install '''
+```
+bundle install 
+
+```
 
 
 
