@@ -4,6 +4,9 @@ class SessionsController < ApplicationController
     end
 
     def new
+      if logged_in?
+        redirect_to customer_path(current_user)
+      end
     end
 
     def create 
@@ -20,7 +23,5 @@ class SessionsController < ApplicationController
         session.delete(:user_id)
         redirect_to '/'
     end
-
-    #omniauth
 
 end

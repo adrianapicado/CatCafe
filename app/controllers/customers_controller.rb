@@ -1,7 +1,11 @@
 class CustomersController < ApplicationController
    
     def new
+      if logged_in?
+        redirect_to customer_path(current_user)
+      else
       @customer = Customer.new
+      end
     end
     
     def create
