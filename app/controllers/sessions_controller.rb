@@ -7,7 +7,7 @@ class SessionsController < ApplicationController
     end
 
     def create 
-     @customer = Customer.find_by(username: params[:customer][:username])
+     @customer = Customer.find_by(username: params[:customer][:username]) 
       if @customer.try(:authenticate, params[:customer][:password])
          session[:user_id] = @customer.id
          redirect_to customer_path(@customer)
