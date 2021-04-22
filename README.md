@@ -27,6 +27,10 @@ rails db:migrate
 rails s
 ```
 
+# License 
+This project is avaialble as open source under the terms of the [MIT License]
+
+
 # Contributing 
 
 Bug reports and pull requests are welcome on GitHub at https://github.com/adrianapicado/CatCafe
