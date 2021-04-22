@@ -28,7 +28,7 @@ rails s
 ```
 
 # License 
-This project is avaialble as open source under the terms of the [MIT License]
+This project is avaialble as open source under the terms of the [MIT License] https://github.com/adrianapicado/CatCafe/blob/master/LICENSE.txt
 
 
 # Contributing 
