@@ -9,29 +9,32 @@
     </div>
 <% end %>
 
-<h1> Appointment </h1>
-
+<h2> <i>Appointment </h2>
+<br>
 <%= form_for @appointment do |f|%>
-    <div>
-    <%= f.label "Date" %>
+    <%= f.label "Pick a date" %>
     <%= f.datetime_field :date %>
-    </div>
-    <div>
+    <br>
+    <br>
     <%= f.label "What kind of coffee would you like?" %>
     <%= f.text_field :coffee %>
-    </div>
-    <p> Choose your kitty companion below</p>
-    <div>
+    <br>
+    <br>
+    <h4> Choose your kitty companion below</h4>
+    <br>
     <%= f.collection_select :cat_id, Cat.all, :id, :name, :prompt => "Our furry friends" %>
-    </div>
-    <p> You can also give a kitten a special nickname for your visit! </p>
+    <br>
+    <br>
+    <h3> You can also give a kitten a special nickname for your visit! </h3>
+    <br>
     <%= f.fields_for :cat, @appointment.cat do |c| %>
     <%= c.label "Nickname" %>
     <%= c.text_field :name %>
+    <br>
     <%= c.label "With mittens?" %>
     <%= c.check_box :mittens %>
+    <br>
     <% end %>
-    </div>
 <br>
     <%= f.submit "submit" %>
 <%end%>
