@@ -4,8 +4,6 @@
 <h3> Your Coffee:
 <%= @appointment.coffee %>
 <h3> Furry friend: <%= link_to @appointment.cat.name, cat_path(@appointment.cat_id) %></h3>
-<div> Your account: 
-<%= link_to @appointment.customer.username, customer_path(@appointment.customer_id) %>
 <br>
 </div>
 <br>
