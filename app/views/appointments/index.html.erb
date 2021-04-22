@@ -1,6 +1,5 @@
 <h2> Your appointments </h2>
  <br>
 <% @appointments.each do |appointment| %>
-    <li><%= appointment.coffee %> to enjoy with <%= link_to appointment.cat.name, cat_path(appointment.cat_id) %> @ <%= appointment.date %></li> 
+    <li><%= appointment.coffee %> to enjoy with <%= link_to appointment.cat.name, cat_path(appointment.cat_id) %> @ <%= appointment.date%></li> 
   <% end %>
-  

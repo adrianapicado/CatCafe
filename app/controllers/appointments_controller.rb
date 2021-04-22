@@ -18,9 +18,8 @@ class AppointmentsController < ApplicationController
 
     def show 
       @appointment = Appointment.find_by_id(params[:id])
-      redirect_to '/' if !@appointment
-    end 
-
+      redirect_to customer_path(current_user) if @appointment.customer_id != session[:user_id]
+    end
 
     def index
      if params[:customer_id].to_i == session[:user_id]
@@ -28,12 +27,12 @@ class AppointmentsController < ApplicationController
         @customer = Customer.find_by_id(params[:customer_id])
         @appointments = @customer.appointments
   
-        elsif @current_user
-           redirect_to customer_path(@current_user)
-  
-        else
-           redirect_to '/' 
-        end
+     else !@current_user
+           redirect_to customer_path(current_user)
+      end
+    end
+
+    def destroy
     end
   
     
@@ -46,6 +45,7 @@ class AppointmentsController < ApplicationController
         params.require(:appointment).permit(:date, :name, :coffee, :cat_id, :customer_id, cat_attributes:[:name, :mittens])
      end
     end
+
 
 end
 
