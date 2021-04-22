@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
 
-  resources :appointments
+  resources :appointments 
   resources :cats 
   resources :customers do 
     resources :appointments, only: [:new, :index]
@@ -19,7 +19,7 @@ Rails.application.routes.draw do
 
   get '/auth/:provider/callback', to: 'sessions#omniauth'
 
-  post '/destroy' => "appointments#destroy"
+  #post '/destroy/appointments/:id' => "appointments#destroy"
 
   
 
