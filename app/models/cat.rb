@@ -6,5 +6,5 @@ class Cat < ApplicationRecord
     
     validates :name, length: { minimum: 2 }
     validates :name, length: { maximum: 10 }
-
+    
 end

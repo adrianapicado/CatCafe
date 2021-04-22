@@ -27,7 +27,7 @@ class AppointmentsController < ApplicationController
         @customer = Customer.find_by_id(params[:customer_id])
         @appointments = @customer.appointments.newest
      else !@current_user
-           redirect_to customer_path(current_user)
+          redirect_to customer_path(current_user)
      end
     end
 
@@ -35,13 +35,12 @@ class AppointmentsController < ApplicationController
     end
 
     def update
-        @appointment.update(appointment_params)
-        if @appointment.save
-        redirect_to appointment_path(@appointment)
+      @appointment.update(appointment_params)
+      if @appointment.save
+         redirect_to appointment_path(@appointment)
       else
-          render :edit
+         render :edit
       end
-      
     end
     
     private 

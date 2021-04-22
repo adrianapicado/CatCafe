@@ -3,7 +3,7 @@
 <% @appointments.each do |appointment| %>
     <li><%= appointment.coffee %> to enjoy with <%= link_to appointment.cat.name, cat_path(appointment.cat_id) %> @ <%= appointment.date%></li> 
     <% if logged_in? %>
-       <%= link_to 'Edit', edit_appointment_path(appointment) %>
+       <%= link_to 'Edit your appointment', edit_appointment_path(appointment) %>
        <br>
        <br>
       <% end %>
