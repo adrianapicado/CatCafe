@@ -4,7 +4,7 @@
 
 * Overview
 
-Welcome to Cat Cafe! Here you, as a customer, can create & schedule appointments to come and enjoy your favorite kind coffee with your favotite companion, coffee options are available as well as putting in request for another option of your choice, you are able to schedule an appointment with one of our already named kitties or even nickname one yourself! 
+Welcome to Cat Cafe! Here you, as a customer, can create & schedule appointments to come and enjoy your favorite kind coffee with your favorite companion, coffee options are available as well as putting in request for another option of your choice, you are able to schedule an appointment with one of our already named kitties or even nickname one yourself! 
 
 As a user you have the option to create an account with us, or signing up with Google!
 
