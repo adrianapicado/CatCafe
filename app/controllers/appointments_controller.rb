@@ -1,5 +1,7 @@
 class AppointmentsController < ApplicationController
 
+  before_action :find_appointment, only: [:show, :edit, :update]
+
     def new 
       @customer = Appointment.find_by_id(params[:customer_id])
       @appointment = Appointment.new
@@ -17,28 +19,23 @@ class AppointmentsController < ApplicationController
     end
 
     def show 
-      @appointment = Appointment.find_by_id(params[:id])
       redirect_to customer_path(current_user) if @appointment.customer_id != session[:user_id]
     end
 
     def index
      if params[:customer_id].to_i == session[:user_id]
-  
         @customer = Customer.find_by_id(params[:customer_id])
         @appointments = @customer.appointments
-  
      else !@current_user
            redirect_to customer_path(current_user)
       end
     end
 
     def edit 
-      @appointment = Appointment.find_by_id(params[:id])
       redirect_to customer_path(current_user) if @appointment.customer_id != session[:user_id]
     end
 
     def update
-      @appointment = Appointment.find_by_id(params[:id])
         @appointment.update(appointment_params)
         if @appointment.save
         redirect_to appointment_path(@appointment)
@@ -47,12 +44,6 @@ class AppointmentsController < ApplicationController
       end
       
     end
-
-    def destroy
-      @appointment = Appointment.find_by_id(params[:id])
-      @appointment.destroy
-    end
-  
     
     private 
 
@@ -62,6 +53,10 @@ class AppointmentsController < ApplicationController
      else
         params.require(:appointment).permit(:date, :name, :coffee, :cat_id, :customer_id, cat_attributes:[:name, :mittens])
      end
+    end
+
+    def find_appointment
+      @appointment = Appointment.find_by_id(params[:id])
     end
 
 
