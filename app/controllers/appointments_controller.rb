@@ -25,7 +25,7 @@ class AppointmentsController < ApplicationController
     def index
      if params[:customer_id].to_i == session[:user_id]
         @customer = Customer.find_by_id(params[:customer_id])
-        @appointments = @customer.appointments
+        @appointments = @customer.appointments.newest
      else !@current_user
            redirect_to customer_path(current_user)
       end
