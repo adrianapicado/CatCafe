@@ -19,5 +19,9 @@ Rails.application.routes.draw do
 
   get '/auth/:provider/callback', to: 'sessions#omniauth'
 
+  post '/destroy' => "appointments#destroy"
+
+  
+
 
 end

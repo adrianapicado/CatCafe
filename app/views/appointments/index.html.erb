@@ -2,4 +2,9 @@
  <br>
 <% @appointments.each do |appointment| %>
     <li><%= appointment.coffee %> to enjoy with <%= link_to appointment.cat.name, cat_path(appointment.cat_id) %> @ <%= appointment.date%></li> 
+    <% if logged_in? %>
+       <%= link_to 'Edit', edit_appointment_path(appointment) %> / <%= link_to 'Cancel', appointments_path(@appointment), :method => :delete, data: { confirm: 'Are you sure?' } %>
+       <br>
+       <br>
+      <% end %>
   <% end %>

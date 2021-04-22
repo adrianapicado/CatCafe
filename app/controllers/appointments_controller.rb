@@ -32,6 +32,22 @@ class AppointmentsController < ApplicationController
       end
     end
 
+    def edit 
+      @appointment = Appointment.find_by_id(params[:id])
+      redirect_to customer_path(current_user) if @appointment.customer_id != session[:user_id]
+    end
+
+    def update
+      @appointment = Appointment.find_by_id(params[:id])
+        @appointment.update(appointment_params)
+        if @appointment.save
+        redirect_to appointment_path(@appointment)
+      else
+          render :edit
+      end
+      
+    end
+
     def destroy
     end
   
