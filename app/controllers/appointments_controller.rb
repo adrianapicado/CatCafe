@@ -1,6 +1,7 @@
 class AppointmentsController < ApplicationController
 
   before_action :find_appointment, only: [:show, :edit, :update]
+  before_action :redirect_if_not_auth, only: [:show, :edit]
 
     def new 
       @customer = Appointment.find_by_id(params[:customer_id])
@@ -19,7 +20,6 @@ class AppointmentsController < ApplicationController
     end
 
     def show 
-      redirect_to customer_path(current_user) if @appointment.customer_id != session[:user_id]
     end
 
     def index
@@ -28,11 +28,10 @@ class AppointmentsController < ApplicationController
         @appointments = @customer.appointments.newest
      else !@current_user
            redirect_to customer_path(current_user)
-      end
+     end
     end
 
     def edit 
-      redirect_to customer_path(current_user) if @appointment.customer_id != session[:user_id]
     end
 
     def update
@@ -57,6 +56,10 @@ class AppointmentsController < ApplicationController
 
     def find_appointment
       @appointment = Appointment.find_by_id(params[:id])
+    end
+
+    def redirect_if_not_auth
+      redirect_to customer_path(current_user) if @appointment.customer_id != session[:user_id]
     end
 
 
